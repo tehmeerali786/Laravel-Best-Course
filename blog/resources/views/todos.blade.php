@@ -32,6 +32,18 @@
 
         <a href="{{ route('todo.update', ['id' => $todo->id]) }}" class="btn btn-info btn-xs" > Update </a>
 
+        @if(!$todo -> completed)
+
+
+                <a href="{{ route('todos.completed', ['id' => $todo -> id]) }}" class="btn btn-xs btn-success"> Mark as Completed </a>
+
+        @else
+
+            <span class="text-success" >Completed!</span>
+
+
+        @endif
+
         <hr>
 
     @endforeach
