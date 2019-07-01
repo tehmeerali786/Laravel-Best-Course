@@ -11,7 +11,9 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="css/app.css" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
+
+    
 
     <!-- Scripts -->
     <script>
@@ -78,7 +80,49 @@
             </div>
         </nav>
 
-        @yield('content')
+           
+
+            <div class="container">
+                <div class="row">
+                    
+                        @if(Auth::check())
+
+
+                            <div class="col-lg-4">
+                            
+                            <ul class="list-group">
+
+
+                                <li class="list-group-item">
+                                    
+                                        <a href="http://localhost/Laravel/blog1/public/home">Home</a> 
+
+                                </li>
+                                
+                                <li class="list-group-item">
+
+                                    
+                                   <a href="{{ route('post.create') }}">Create new post</a> 
+
+                                </li>
+
+                            </ul>
+
+                            </div>
+
+
+                        @endif
+
+                        <div class="col-lg-8" >
+
+                            @yield('content')
+                            
+                        </div>
+                        
+                    
+                </div>
+            </div>
+
     </div>
 
     <!-- Scripts -->
