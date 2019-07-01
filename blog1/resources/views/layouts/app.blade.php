@@ -95,7 +95,7 @@
 
                                 <li class="list-group-item">
                                     
-                                        <a href="http://localhost/Laravel/blog1/public/home">Home</a> 
+                                        <a href="{{ route('home') }}">Home</a> 
 
                                 </li>
                                 
