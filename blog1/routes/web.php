@@ -88,6 +88,15 @@ Route::get('/category/delete/{id}', [
 ]);
 
 
+Route::get('/posts', [
+
+	'uses' => 'PostsController@index',
+	'as' => 'posts'
+
+
+]);
+
+
 Route::post('/category/store', [
 
 'uses' => 'CategoriesController@store',
