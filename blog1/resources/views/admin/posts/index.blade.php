@@ -55,7 +55,7 @@
 						
 						<td>
 							
-							Image
+							<img src="{{ $post -> featured }}" alt="{{ $post -> title }}" widht="90px" height="50px" >
 
 						</td>
 
