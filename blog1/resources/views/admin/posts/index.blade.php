@@ -67,7 +67,7 @@
 
 						<td>
 							
-							Edit
+							<a href="{{ route('post.edit', ['id' => $post->id]) }}" class="btn btn-info" >Edit</a>
 
 						</td>
 

@@ -117,6 +117,14 @@ Route::get('/posts/restore/{id}', [
 
 ]);
 
+Route::get('/posts/edit/{id}', [
+
+	'uses' => 'PostsController@edit',
+	'as' => 'post.edit'
+
+
+]);
+
 
 Route::get('/posts', [
 
@@ -155,6 +163,16 @@ Route::post('/post/store', [
 
 	'uses' => 'PostsController@store',
 	'as' => 'post.store'
+
+]);
+
+Route::post('/post/update/{id}', [
+
+
+	'uses' => 'PostsController@update',
+	'as' => 'post.update'
+
+
 
 ]);
 
