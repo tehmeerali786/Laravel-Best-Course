@@ -37,7 +37,13 @@
 
 				<th>
 					
-					Trash
+					Restore
+
+				</th>
+
+				<th>
+					
+					Delete
 
 				</th>
 
@@ -73,7 +79,13 @@
 
 						<td>
 							
-							<a href="{{ route('post.delete', ['id' => $post->id]) }}" class="btn btn-danger" >Trash</a>
+							<a href="{{ route('post.restore', ['id' => $post->id]) }}" class="btn btn-xs btn-success" >Restore</a>
+
+						</td>
+
+						<td>
+							
+							<a href="{{ route('post.pdelete', ['id' => $post->id]) }}" class="btn btn-xs btn-danger" >Delete</a>
 
 						</td>
 

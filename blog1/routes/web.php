@@ -39,12 +39,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth' ], function() {
 ]);
 
 
-Route::post('/post/store', [
 
-	'uses' => 'PostsController@store',
-	'as' => 'post.store'
-
-]);
 
 
 Route::get('/category/create', [
@@ -87,6 +82,41 @@ Route::get('/category/delete/{id}', [
 
 ]);
 
+Route::get('/post/delete/{id}', [
+
+
+	'uses' => 'PostsController@destroy',
+
+	'as' => 'post.delete'
+
+
+
+]);
+
+Route::get('/posts/trashed', [
+
+	'uses' => 'PostsController@trashed',
+	'as' => 'posts.trashed'
+
+
+]);
+
+Route::get('/posts/pdelete/{id}', [
+
+	'uses' => 'PostsController@pdelete',
+	'as' => 'post.pdelete'
+
+
+]);
+
+Route::get('/posts/restore/{id}', [
+
+	'uses' => 'PostsController@restore',
+	'as' => 'post.restore'
+
+
+]);
+
 
 Route::get('/posts', [
 
@@ -117,6 +147,16 @@ Route::post('/category/update/{id}', [
 
 ]);
 
+
+
+
+
+Route::post('/post/store', [
+
+	'uses' => 'PostsController@store',
+	'as' => 'post.store'
+
+]);
 
 
 
