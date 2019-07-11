@@ -115,7 +115,7 @@
 
                                 <li class="list-group-item">
                                     
-                                        <a href="{{ route('tag.create') }}">Tags</a> 
+                                        <a href="{{ route('tag.create') }}">Create tag</a> 
 
                                 </li>
 

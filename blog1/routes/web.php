@@ -195,6 +195,24 @@ Route::get('/tag/edit/{id}', [
 
 ]);
 
+Route::get('/tag/create', [
+
+
+	'uses' => 'TagsController@create',
+	'as' => 'tag.create'
+
+
+]);
+
+Route::post('/tag/store', [
+
+
+	'uses' => 'TagsController@store',
+	'as' => 'tag.store'
+
+
+]);
+
 Route::post('/tag/update/{id}', [
 
 
@@ -204,7 +222,7 @@ Route::post('/tag/update/{id}', [
 
 ]);
 
-Route::post('/tag/delete/{id}', [
+Route::get('/tag/delete/{id}', [
 
 
 	'uses' => 'TagsController@destroy',
