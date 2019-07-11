@@ -6,6 +6,13 @@
 
 
 		<div class="panel panel-default" >
+
+			<div class="panel-heading" >
+
+				Trashed Posts
+				
+
+			</div>
 			
 			<div class="panel-body" >
 				
@@ -53,7 +60,7 @@
 
 			<tbody>
 				
-
+				@if($posts -> count() > 0)
 				@foreach($posts as $post)
 
 
@@ -93,6 +100,14 @@
 
 
 				@endforeach
+
+				@else
+
+					<tr>
+						<th colspan="5" class="text-center" >No trashed posts</th>
+					</tr>
+
+				@endif
 			</tbody>
 			
 

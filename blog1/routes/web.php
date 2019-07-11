@@ -177,6 +177,43 @@ Route::post('/post/update/{id}', [
 ]);
 
 
+Route::get('/tags', [
+
+
+	'uses' => 'TagsController@index',
+	'as' => 'tags'
+
+
+]);
+
+Route::get('/tag/edit/{id}', [
+
+
+	'uses' => 'TagsController@edit',
+	'as' => 'tag.edit'
+
+
+]);
+
+Route::post('/tag/update/{id}', [
+
+
+	'uses' => 'TagsController@update',
+	'as' => 'tag.update'
+
+
+]);
+
+Route::post('/tag/delete/{id}', [
+
+
+	'uses' => 'TagsController@destroy',
+	'as' => 'tag.delete'
+
+
+]);
+
+
 
 
 

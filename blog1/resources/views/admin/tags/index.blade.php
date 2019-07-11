@@ -7,9 +7,10 @@
 
 		<div class="panel panel-default" >
 
+
 			<div class="panel-heading" >
 
-				Published Posts
+				Tags
 				
 
 			</div>
@@ -23,13 +24,13 @@
 				
 				<th>
 					
-					Image
+					Tag name
 
 				</th>
 
 				<th>
 					
-					Title
+					Editing
 
 				</th>
 
@@ -37,14 +38,8 @@
 				<th>
 					
 
-					Edit
+					Deleting
 
-
-				</th>
-
-				<th>
-					
-					Trash
 
 				</th>
 
@@ -54,34 +49,36 @@
 
 			<tbody>
 				
-				@if($posts -> count() > 0)
+				@if($tags -> count() > 0)
 
-				@foreach($posts as $post)
+				@foreach($tags as $tag)
 
 
 					<tr>
 						
 						<td>
 							
-							<img src="{{ $post -> featured }}" alt="{{ $post -> title }}" widht="90px" height="50px" >
+							{{ $tag -> tag }}
 
 						</td>
 
 						<td>
 							
-							{{ $post -> title }}
+							<a href="{{ route('tag.edit', ['id' => $tag -> id]) }}" class="btn btn-xs btn-info">
+								
+								Edit
+
+							</a>
 
 						</td>
 
 						<td>
 							
-							<a href="{{ route('post.edit', ['id' => $post->id]) }}" class="btn btn-info" >Edit</a>
+							<a href="{{ route('tags.delete', ['id' => $tag -> id]) }}" class="btn btn-xs btn-danger">
+								
+								Delete
 
-						</td>
-
-						<td>
-							
-							<a href="{{ route('post.delete', ['id' => $post->id]) }}" class="btn btn-danger" >Trash</a>
+							</a>
 
 						</td>
 
@@ -93,7 +90,7 @@
 				@else
 
 					<tr>
-						<th colspan="5" class="text-center" >No published posts</th>
+						<th colspan="5" class="text-center" >No tags yet.</th>
 					</tr>
 
 

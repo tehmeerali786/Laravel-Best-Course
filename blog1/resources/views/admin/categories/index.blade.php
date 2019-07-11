@@ -6,6 +6,14 @@
 
 
 		<div class="panel panel-default" >
+
+
+			<div class="panel-heading" >
+
+				Categories
+				
+
+			</div>
 			
 			<div class="panel-body" >
 				
@@ -41,6 +49,7 @@
 
 			<tbody>
 				
+				@if($categories -> count() > 0)
 
 				@foreach($categories as $category)
 
@@ -77,6 +86,15 @@
 
 
 				@endforeach
+
+				@else
+
+					<tr>
+						<th colspan="5" class="text-center" >No categories yet.</th>
+					</tr>
+
+
+				@endif
 			</tbody>
 			
 
