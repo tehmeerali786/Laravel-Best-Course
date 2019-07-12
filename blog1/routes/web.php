@@ -240,6 +240,31 @@ Route::get('/tag/delete/{id}', [
 ]);
 
 
+Route::get('/users', [
+
+
+	'uses' => 'UsersController@index',
+	'as' => 'users'
+
+]);
+
+Route::get('/user/create', [
+
+
+	'uses' => 'UsersController@create',
+	'as' => 'user.create'
+
+]);
+
+Route::post('/user/store', [
+
+
+	'uses' => 'UsersController@store',
+	'as' => 'user.store'
+
+]);
+
+
 
 
 
