@@ -291,6 +291,25 @@ Route::get('user/not-admin/{id}', [
 ] );
 
 
+Route::get('user/profile', [
+
+
+	'uses' => 'ProfilesController@index',
+	'as' => 'user.profile',
+
+
+]);
+
+Route::post('user/profile/update', [
+
+
+	'uses' => 'ProfilesController@update',
+	'as' => 'user.profile.update',
+
+
+]);
+
+
 
 
 
