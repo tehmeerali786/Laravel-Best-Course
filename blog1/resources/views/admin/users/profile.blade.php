@@ -48,7 +48,7 @@
 
 		<div class="panel-body" >
 			
-			<form action="{{ route('user.profile.update') }}" method="post" >
+			<form action="{{ route('user.profile.update') }}" method="post" enctype="multipart/form-data">
 				
 				{{ csrf_field() }}
 
