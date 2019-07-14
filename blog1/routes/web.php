@@ -300,6 +300,15 @@ Route::get('user/profile', [
 
 ]);
 
+Route::get('user/delete/{id}', [
+
+
+	'uses' => 'UsersController@destroy',
+	'as' => 'user.delete',
+
+
+]);
+
 Route::post('user/profile/update', [
 
 

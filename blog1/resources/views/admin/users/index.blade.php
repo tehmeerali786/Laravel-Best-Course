@@ -91,8 +91,12 @@
 						</td>
 
 						<td>
+
+							@if(Auth::id() != $user->id )
 							
-							Delete
+							<a href="{{ route('user.delete', ['id' => $user->id]) }}" class="btn btn-xs btn-danger">Delete</a>
+
+							@endif
 
 						</td>
 
