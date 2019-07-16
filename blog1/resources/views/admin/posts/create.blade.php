@@ -146,6 +146,8 @@
 
 						</button>
 
+						<p>I am a paragraph</p>
+
 					</div>
 					
 
@@ -158,5 +160,51 @@
 
 	</div>
 
+
+@stop
+
+@section('styles')
+
+
+
+
+
+
+
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
+
+
+@stop
+
+
+@section('scripts')
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+
+ 
+
+   
+
+
+
+
+<script>
+	
+
+	$(document).ready(function(){
+  $("p").click(function(){
+    $(this).hide();
+
+
+  });
+
+  $('#content').summernote({
+        placeholder: 'Hello stand alone ui',
+        tabsize: 2,
+        height: 100
+      });
+});
+</script>
 
 @stop

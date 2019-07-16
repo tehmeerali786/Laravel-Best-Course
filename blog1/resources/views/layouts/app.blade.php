@@ -15,6 +15,8 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/toastr.min.css')}}">
 
+    @yield('styles')
+
     
 
     <!-- Scripts -->
@@ -169,6 +171,16 @@
 
                                 </li>
 
+                                @if(Auth::user()->admin)
+
+                                    <li class="list-group-item">
+
+                                        
+                                       <a href="{{ route('settings') }}">Settings</a> 
+
+                                    </li>
+                                @endif
+
                             </ul>
 
                             </div>
@@ -219,6 +231,10 @@
 
 
     </script>
+
+
+
+    @yield('scripts')
 
 
 </body>

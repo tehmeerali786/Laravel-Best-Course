@@ -265,7 +265,7 @@ Route::post('/user/store', [
 ]);
 
 
-Route::get('user/admin/{id}', [
+Route::get('/user/admin/{id}', [
 
 
 	'uses' => 'UsersController@admin',
@@ -278,7 +278,7 @@ Route::get('user/admin/{id}', [
 ] );
 
 
-Route::get('user/not-admin/{id}', [
+Route::get('/user/not-admin/{id}', [
 
 
 	'uses' => 'UsersController@not_admin',
@@ -291,7 +291,7 @@ Route::get('user/not-admin/{id}', [
 ] );
 
 
-Route::get('user/profile', [
+Route::get('/user/profile', [
 
 
 	'uses' => 'ProfilesController@index',
@@ -300,7 +300,7 @@ Route::get('user/profile', [
 
 ]);
 
-Route::get('user/delete/{id}', [
+Route::get('/user/delete/{id}', [
 
 
 	'uses' => 'UsersController@destroy',
@@ -309,7 +309,7 @@ Route::get('user/delete/{id}', [
 
 ]);
 
-Route::post('user/profile/update', [
+Route::post('/user/profile/update', [
 
 
 	'uses' => 'ProfilesController@update',
@@ -318,6 +318,26 @@ Route::post('user/profile/update', [
 
 ]);
 
+
+Route::get('/settings', [
+
+
+	'uses' => 'SettingsController@index',
+	'as' => 'settings'
+
+
+]);
+
+
+
+Route::post('/settings/update', [
+
+
+	'uses' => 'SettingsController@update',
+	'as' => 'settings.update'
+
+
+]);
 
 
 
