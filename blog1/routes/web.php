@@ -343,6 +343,17 @@ Route::post('/settings/update', [
 ]);
 
 
+Route::get('/{slug}', [
+
+
+	'uses' => 'FrontEndController@singlePost',
+	'as' => 'post.single'
+
+
+
+]);
+
+
 
 
 
