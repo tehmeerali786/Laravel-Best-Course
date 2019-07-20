@@ -3,7 +3,7 @@
                 <div class="header-content-wrapper">
                     <div class="logo">
                         <div class="logo-text">
-                            <div class="logo-title">{{ $settings->site_name }}</div>
+                            <div class="logo-title"> <a href="{{ route('index') }}">{{ $settings->site_name }}</a> </div>
                         </div>
                     </div>
 
@@ -21,7 +21,7 @@
                             @foreach($categories as $category)
 
                                 <li>
-                                <a href=""> {{ $category->name }}  </a>
+                                <a href="{{ route('category.single', ['id' => $category->id]) }}"> {{ $category->name }}  </a>
                                 </li>
 
 
