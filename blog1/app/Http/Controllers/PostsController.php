@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Session;
 
+use Auth;
+
 use App\Tag;
 
 use App\Post;
@@ -87,11 +89,13 @@ class PostsController extends Controller
 
         $post = Post::create([
 
-            'title' => $request -> title,
-            'content' => $request -> content,
+            'title' => $request ->title,
+            'content' => $request ->content,
             'featured' => 'uploads/posts/' . $featured_new_name,
-            'category_id' => $request -> category_id,
-            'slug' =>  str_slug($request -> title),
+            'category_id' => $request ->category_id,
+            'slug' =>  str_slug($request ->title),
+            'user_id' => Auth::id(),
+
 
 
         ]);
