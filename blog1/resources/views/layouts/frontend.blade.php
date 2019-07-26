@@ -52,6 +52,8 @@
 
 <!-- Subscribe Form -->
 
+@include('includes.form')
+
 <div class="container-fluid bg-green-color">
     <div class="row">
         <div class="container">
