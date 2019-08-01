@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Create a new channel</div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Create a new channel</div>
 
-                <div class="card-body">
+                <div class="panel-body">
                     
 
                     <form action="{{ route('channels.update') }}" method="post">

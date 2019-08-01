@@ -1,13 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Edit channel: {{ $channel->title }}</div>
 
-                <div class="card-body">
+            <div class="panel panel-default">
+                <div class="panel-heading">Edit channel: {{ $channel->title }}</div>
+
+                <div class="panel-body">
                     
 
                     <form action="{{ route('channels.update', ['channel' => $channel->id]) }}" method="post">
@@ -45,7 +43,5 @@
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+        
 @endsection
