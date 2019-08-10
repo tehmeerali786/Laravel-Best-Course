@@ -22,5 +22,17 @@ class UsertableSeeder extends Seeder
             'avatar' => asset('avatars/avatar.png'),
 
         ]);
+
+        App\User::create([
+
+
+            'name' => 'Emily Myers',
+            'password' => bcrypt('password'),
+            'email' => 'emily@tehmeerali.com',
+            'avatar' => asset('avatars/avatar.png'),
+
+        ]);
+
+        
     }
 }
