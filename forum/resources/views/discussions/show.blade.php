@@ -49,46 +49,80 @@
 
 
                 <div class="panel panel-default">
-                <div class="panel-heading">
-                    
-                    <img src="{{ $r->user->avatar }}" alt="" width="40px" height="40px">&nbsp;&nbsp;&nbsp;
-
-                    <span>{{ $r->user->name }}, <b>{{ $r->created_at->diffForHumans() }}</b></span>
-
-                    
-
-                </div>
-
-                <div class="panel-body">
-                    
-                     
-
-                     <p class="text-center" >
-                         
-                        {{ $r->content }}
-
-                     </p>
-
-                    
-                </div>
-
-                <div class="panel-footer" >
-                    
-
-                    <p>
+                    <div class="panel-heading">
                         
-                        LIKE
+                        <img src="{{ $r->user->avatar }}" alt="" width="40px" height="40px">&nbsp;&nbsp;&nbsp;
 
-                    </p>
+                        <span>{{ $r->user->name }}, <b>{{ $r->created_at->diffForHumans() }}</b></span>
 
+                        
+
+                    </div>
+
+                    <div class="panel-body">
+                        
+                         
+
+                         <p class="text-center" >
+                             
+                            {{ $r->content }}
+
+                         </p>
+
+                        
+                    </div>
+
+                    <div class="panel-footer" >
+                        
+
+                        <p>
+                            
+                            LIKE
+
+                        </p>
+
+                    </div>
                 </div>
-            </div>
-
-
-
-
 
             @endforeach
         
+
+        
+            <div class="panel panel-default" >
+                
+                <div class="panel-body" >
+                    
+                    <form action="{{ route('discussion.reply', ['id' => $d->id]) }}"  method="post" >
+
+
+                        {{ csrf_field() }}
+
+
+                        <div class="form-group" >
+
+                            <label for="reply">Leave a reply .... </label>
+                            
+                            <textarea name="reply" id="reply" cols="30" rows="10" class="form-control"  ></textarea>
+
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <button class="btn pull-right">
+                                
+                                Leave a reply
+
+                            </button>
+                            
+
+                        </div>
+                        
+
+                    </form>
+
+                </div>
+
+            </div>
 
 @endsection

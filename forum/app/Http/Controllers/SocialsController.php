@@ -34,7 +34,7 @@ class SocialsController extends Controller
 
     	});
 
-    	return redirect('/home');
+    	return redirect('/forum');
     	
     }
 }

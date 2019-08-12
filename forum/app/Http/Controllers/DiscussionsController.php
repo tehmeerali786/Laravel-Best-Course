@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Reply;
+
 use App\Discussion;
 
 use Auth;
@@ -75,6 +77,31 @@ class DiscussionsController extends Controller
 
 
 
+    }
+
+
+    public function reply($id)
+
+    {
+
+        $d = Discussion::find($id);
+
+        $reply = Reply::create([
+
+
+            'user_id' => Auth::id(),
+
+            'discussion_id' => $id,
+
+            'content' => request()->reply,
+
+        ]);
+
+
+        Session::flash('success', 'Replied to discussion. ');
+
+
+        return redirect()->back();
     }
 
 
