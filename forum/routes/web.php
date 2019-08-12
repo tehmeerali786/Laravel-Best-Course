@@ -56,6 +56,13 @@ Route::get('{provider}/redirect', [
 
 ]);
 
+Route::get('channel/{slug}', [
+
+	'uses' => 'ForumsController@channel',
+	'as' => 'channel', 
+
+]);
+
 Route::group(['middleware' => 'auth'], function() {
 
 

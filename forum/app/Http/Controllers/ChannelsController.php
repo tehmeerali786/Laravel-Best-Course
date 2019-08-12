@@ -55,6 +55,7 @@ class ChannelsController extends Controller
         Channel::create([
 
             'title' => $request->channel,
+            'slug' => str_slug($request->channel),
 
 
         ]);
@@ -104,6 +105,8 @@ class ChannelsController extends Controller
         $channel = Channel::find($id);
 
         $channel->title = $request->channel;
+
+        $channel->slug = str_slug($request->channel);
 
         $channel->save();
 
