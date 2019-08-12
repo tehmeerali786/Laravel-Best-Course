@@ -79,6 +79,32 @@
 
                 <a href="{{ route('discussions.create') }}" class="form-control btn btn-primary">Create a new discussion</a>
 
+                 <div class="panel panel-default">
+
+
+                    
+
+
+                    <div class="panel-body">
+
+                        <ul class="list-group">
+
+                            <li>
+                                
+                                <a href="http://localhost/Laravel/forum/public/forum" style="text-decoration: none;">Home</a>
+
+                            </li>
+                            
+                        </ul>
+                        
+
+                    </div>
+
+
+                    
+
+                </div>
+
                 <div class="panel panel-default">
 
 
@@ -116,6 +142,8 @@
                     
 
                 </div>
+
+
                 
 
 

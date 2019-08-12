@@ -100,35 +100,49 @@
             <div class="panel panel-default" >
                 
                 <div class="panel-body" >
+
+                    @if(Auth::check())
                     
-                    <form action="{{ route('discussion.reply', ['id' => $d->id]) }}"  method="post" >
+                            <form action="{{ route('discussion.reply', ['id' => $d->id]) }}"  method="post" >
 
 
-                        {{ csrf_field() }}
+                                {{ csrf_field() }}
 
 
-                        <div class="form-group" >
+                                <div class="form-group" >
 
-                            <label for="reply">Leave a reply .... </label>
-                            
-                            <textarea name="reply" id="reply" cols="30" rows="10" class="form-control"  ></textarea>
+                                    <label for="reply">Leave a reply .... </label>
+                                    
+                                    <textarea name="reply" id="reply" cols="30" rows="10" class="form-control"  ></textarea>
 
 
-                        </div>
+                                </div>
 
-                        <div class="form-group">
+                                <div class="form-group">
 
-                            <button class="btn pull-right">
+                                    <button class="btn pull-right">
+                                        
+                                        Leave a reply
+
+                                    </button>
+                                    
+
+                                </div>
                                 
-                                Leave a reply
 
-                            </button>
-                            
+                            </form>
 
-                        </div>
-                        
+                    @else
 
-                    </form>
+                            <div class="text-center">
+
+                                <h2>Sign in to leave a reply.</h2>
+                                
+
+                            </div>
+
+
+                    @endif
 
                 </div>
 
