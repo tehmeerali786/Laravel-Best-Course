@@ -74,12 +74,21 @@
 
                     <div class="panel-footer" >
                         
+                        @if($r->is_liked_by_author_user())
 
-                        <p>
-                            
-                            LIKE
 
-                        </p>
+                            <a href="/" class="btn btn-danger btn-xs">Unlike</a>
+
+
+                        @else
+
+
+                            <a href="/" class="btn btn-success btn-xs">Like</a>
+
+
+                        @endif
+
+                        
 
                     </div>
                 </div>
