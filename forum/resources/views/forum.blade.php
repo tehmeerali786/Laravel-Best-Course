@@ -8,15 +8,40 @@
                 <div class="panel panel-default">
                 <div class="panel-heading">
                     
-                    <img src="{{ $d->user->avatar }}" alt="" width="70px" height="70px">
+                    <img src="{{ $d->user->avatar }}" alt="" width="40px" height="40px">&nbsp;&nbsp;&nbsp;
+
+                    <span>{{ $d->user->name }}</span>
+
+                    <a href="{{ route('discussion', ['slug' => $d->slug]) }}" class="btn btn-default pull-right">view</a>
 
                 </div>
 
                 <div class="panel-body">
                     
-                    {{ $d->content }}
+                     <h3 class="text-center" >
+                         
+                        {{ $d->title }}
+
+                     </h3>
+
+                     <p class="text-center" >
+                         
+                        {{ str_limit($d->content, 50) }}
+
+                     </p>
 
                     
+                </div>
+
+                <div class="panel-footer" >
+                    
+
+                    <p>
+                        
+                        {{ $d->replies->count() }} Replies
+
+                    </p>
+
                 </div>
             </div>
 
