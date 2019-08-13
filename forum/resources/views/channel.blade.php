@@ -36,11 +36,19 @@
                 <div class="panel-footer" >
                     
 
-                    <p>
+                    <span>
                         
                         {{ $d->replies->count() }} Replies
 
-                    </p>
+                    </span>
+
+
+                    <a href=" {{ route('channel', ['slug' => $d->channel->slug ]) }} " class="pull-right btn btn-default btn-xs" >
+                        
+                        {{ $d->channel->title  }}
+
+
+                    </a>
 
                 </div>
             </div>

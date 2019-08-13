@@ -10,7 +10,7 @@
 
                     <span>{{ $d->user->name }}, <b>{{ $d->created_at->diffForHumans() }}</b></span>
 
-                    <a href="{{ route('discussion', ['slug' => $d->slug]) }}" class="btn btn-default pull-right">view</a>
+                    <a href="{{ route('discussion', ['slug' => $d->slug]) }}" class="btn btn-default pull-right">watch</a>
 
                 </div>
 
@@ -36,11 +36,19 @@
                 <div class="panel-footer" >
                     
 
-                    <p>
+                    <span>
                         
                         {{ $d->replies->count() }} Replies
 
-                    </p>
+                    </span>
+
+
+                    <a href=" {{ route('channel', ['slug' => $d->channel->slug ]) }} " class="pull-right btn btn-default btn-xs" >
+                        
+                        {{ $d->channel->title  }}
+
+
+                    </a>
 
                 </div>
             </div>
