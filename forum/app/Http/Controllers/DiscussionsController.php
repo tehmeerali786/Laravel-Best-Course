@@ -8,9 +8,13 @@ use App\Reply;
 
 use App\Discussion;
 
+use App\User;
+
 use Auth;
 
 use Session;
+
+use Notification;
 
 class DiscussionsController extends Controller
 {
@@ -86,6 +90,8 @@ class DiscussionsController extends Controller
 
         $d = Discussion::find($id);
 
+        
+
         $reply = Reply::create([
 
 
@@ -96,6 +102,22 @@ class DiscussionsController extends Controller
             'content' => request()->reply,
 
         ]);
+
+
+        $watchers = array();
+
+        foreach($d->watchers as $watcher):
+
+            array_push($watchers, User::find($watcher->user_id));
+
+
+
+        endforeach;
+
+
+        Notification::send($watchers, new \App\Notifications\NewReplyAdded($d));
+
+
 
 
         Session::flash('success', 'Replied to discussion. ');
